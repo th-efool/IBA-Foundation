@@ -42,8 +42,8 @@ export default function BlogIndexPage() {
 
     { num: "05", title: "How to Solve Problems Nobody Has Defined for You", category: "Competition strategy", published: true, slug: "how-to-solve-problems-nobody-has-defined-for-you", desc: "A framework for handling ambiguous briefs, identifying constraints, testing assumptions, and scoping MVPs." },
     { num: "06", title: "The Prototype Is Not the Product", category: "Engineering", published: true, slug: "the-prototype-is-not-the-product", desc: "The gap between a compelling demo and a reliable production system, including testing, maintainability, and security." },
-    { num: "07", title: "Constraints Are a Design Tool", category: "Innovation", published: false, desc: "How tight bounds on time, compute, and budget sharpen architectural decisions when handled deliberately." },
-    { num: "08", title: "What Should a Merit-Based Innovation Competition Reward?", category: "Talent development", published: false, desc: "Originality, reasoning, implementation, and avoiding the trap of rewarding superficial presentations." },
+    { num: "07", title: "Constraints Are a Design Tool", category: "Innovation", published: true, slug: "constraints-are-a-design-tool", desc: "How tight bounds on time, compute, and budget sharpen architectural decisions when handled deliberately." },
+    { num: "08", title: "What Should a Merit-Based Innovation Competition Reward?", category: "Talent development", published: true, slug: "what-should-a-merit-based-innovation-competition-reward", desc: "Originality, reasoning, implementation, and avoiding the trap of rewarding superficial presentations." },
     { num: "09", title: "Learning by Building: Why Feedback Matters More Than Perfect Plans", category: "Learning", published: false, desc: "The cycle of hypothesis, rapid prototype, adversarial testing, and revision over passive studying." },
     { num: "10", title: "FinTech Is More Than Putting Banking on a Screen", category: "Applied research", published: false, desc: "Deep systems examination of trust, fraud detection, decentralized identity, and low-latency settlement." },
     { num: "11", title: "Why the Hardest Problems Need People From Different Disciplines", category: "Open innovation", published: false, desc: "Why breakthrough engineering requires fusing hardware, economics, biology, and domain mechanics." },
@@ -133,7 +133,7 @@ export default function BlogIndexPage() {
                 </p>
               </div>
               <div className="text-xs font-mono text-white/50">
-                6 PUBLISHED &bull; 6 IN PRODUCTION
+                8 PUBLISHED &bull; 4 IN PRODUCTION
               </div>
 
 
