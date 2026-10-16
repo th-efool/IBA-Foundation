@@ -40,8 +40,8 @@ export default function BlogIndexPage() {
     { num: "03", title: "The Art of Asking Better Questions", category: "Critical thinking", published: true, slug: "the-art-of-asking-better-questions", desc: "How problem framing changes the quality of solutions, turning vague objectives into testable questions." },
     { num: "04", title: "AI Is Changing What It Means to Be a Builder", category: "Technology", published: true, slug: "ai-is-changing-what-it-means-to-be-a-builder", desc: "How AI-assisted development alters prototyping velocity, verification requirements, and engineering judgment." },
 
-    { num: "05", title: "How to Solve Problems Nobody Has Defined for You", category: "Competition strategy", published: false, desc: "A framework for handling ambiguous briefs, identifying constraints, testing assumptions, and scoping MVPs." },
-    { num: "06", title: "The Prototype Is Not the Product", category: "Engineering", published: false, desc: "The gap between a compelling demo and a reliable production system, including testing, maintainability, and security." },
+    { num: "05", title: "How to Solve Problems Nobody Has Defined for You", category: "Competition strategy", published: true, slug: "how-to-solve-problems-nobody-has-defined-for-you", desc: "A framework for handling ambiguous briefs, identifying constraints, testing assumptions, and scoping MVPs." },
+    { num: "06", title: "The Prototype Is Not the Product", category: "Engineering", published: true, slug: "the-prototype-is-not-the-product", desc: "The gap between a compelling demo and a reliable production system, including testing, maintainability, and security." },
     { num: "07", title: "Constraints Are a Design Tool", category: "Innovation", published: false, desc: "How tight bounds on time, compute, and budget sharpen architectural decisions when handled deliberately." },
     { num: "08", title: "What Should a Merit-Based Innovation Competition Reward?", category: "Talent development", published: false, desc: "Originality, reasoning, implementation, and avoiding the trap of rewarding superficial presentations." },
     { num: "09", title: "Learning by Building: Why Feedback Matters More Than Perfect Plans", category: "Learning", published: false, desc: "The cycle of hypothesis, rapid prototype, adversarial testing, and revision over passive studying." },
@@ -133,7 +133,7 @@ export default function BlogIndexPage() {
                 </p>
               </div>
               <div className="text-xs font-mono text-white/50">
-                4 PUBLISHED &bull; 8 IN PRODUCTION
+                6 PUBLISHED &bull; 6 IN PRODUCTION
               </div>
 
 
