@@ -1,0 +1,5 @@
+export default function Loading() {
+    return (
+        <div className="min-h-screen w-full bg-[#0D0C0A]" />
+    );
+}
