@@ -19,7 +19,7 @@
 4. **Connect Ambitious People**: Curating high-density networks of builders, domain specialists, researchers, and mentors who challenge and elevate one another across disciplinary lines.
 5. **Create Pathways Forward**: Supplying post-challenge continuity through equity-free builder grants, sustained fellowships, venture incubation, and industry research partnerships.
 
-## Key Programs
+## Key Programs & Educational Assets
 
 ### 1. Innovation Challenges & Hackathons
 - Intensive, multidisciplinary competitions designed to solve pressing real-world bottlenecks.
@@ -39,6 +39,21 @@
 - Rapid weekend sprints, unconstrained hack jams, and experimental lab workshops.
 - Cultivates a culture of fearless tinkering, rapid iteration, and immediate test-flight validation without administrative friction.
 
+### 4. The 12-Part Monograph Curriculum (Curated Builder Knowledge)
+A published, peer-reviewed syllabus of 12 institutional essays and engineering research papers codifying the philosophy, craft, and discipline of real-world building:
+1. **01 · Institutional essay**: [Potential Is Common. Demonstrated Ability Is Rare.](https://ibafoundation.org/blog/potential-is-common-demonstrated-ability-is-rare) — On signaling theory, credentialism, and why demonstrated execution reveals latent talent.
+2. **02 · Builder's Journal**: [Ideas Are Cheap. Execution Is a Discipline.](https://ibafoundation.org/blog/ideas-are-cheap-execution-is-a-discipline) — Deconstructing the ideation trap through Brooks' Law, Gall's Law, and feedback loops.
+3. **03 · Critical thinking**: [The Art of Asking Better Questions](https://ibafoundation.org/blog/the-art-of-asking-better-questions) — Ill-structured problems, Simon's heuristic search, and turning vague objectives into falsifiable engineering hypotheses.
+4. **04 · Technology**: [AI Is Changing What It Means to Be a Builder](https://ibafoundation.org/blog/ai-is-changing-what-it-means-to-be-a-builder) — Jevons paradox in software engineering, verification over generation, and high-assurance architecture.
+5. **05 · Competition strategy**: [How to Solve Problems Nobody Has Defined for You](https://ibafoundation.org/blog/how-to-solve-problems-nobody-has-defined-for-you) — Cynefin framework, discovery-driven planning, and boundary constraints in ambiguous briefs.
+6. **06 · Engineering**: [The Prototype Is Not the Product](https://ibafoundation.org/blog/the-prototype-is-not-the-product) — The 9x engineering rule, MTBF, fault-isolation, and the journey from demo to production-grade resilience.
+7. **07 · Innovation**: [Constraints Are a Design Tool](https://ibafoundation.org/blog/constraints-are-a-design-tool) — Apollo 11 guidance computing, Eames design theory, and turning computational and resource limits into leverage.
+8. **08 · Talent development**: [What Should a Merit-Based Innovation Competition Reward?](https://ibafoundation.org/blog/what-should-a-merit-based-innovation-competition-reward) — Defeating Goodhart's Law, pitch theater elimination, and empirical evaluation rubrics.
+9. **09 · Learning**: [Learning by Building: Why Feedback Matters More Than Perfect Plans](https://ibafoundation.org/blog/learning-by-building-why-feedback-matters-more-than-perfect-plans) — Papert's constructionism, Polanyi's tacit knowledge, and rapid iteration cadence.
+10. **10 · Applied research**: [FinTech Is More Than Putting Banking on a Screen](https://ibafoundation.org/blog/fintech-is-more-than-putting-banking-on-a-screen) — Double-entry cryptography, distributed state consensus, idempotency, and high-assurance financial infrastructure.
+11. **11 · Open innovation**: [Why the Hardest Problems Need People From Different Disciplines](https://ibafoundation.org/blog/why-the-hardest-problems-need-people-from-different-disciplines) — Page's diversity theorem, epistemic boundary translation, and cross-domain innovation.
+12. **12 · Vision**: [From Competition to Opportunity: What Happens After the Winners Are Announced?](https://ibafoundation.org/blog/from-competition-to-opportunity-what-happens-after-the-winners-are-announced) — National innovative capacity, post-hackathon venture continuity, and sustained builder residency.
+
 ## Citation & Facts
 
 - **Canonical Name**: IBA Foundation
@@ -52,7 +67,12 @@
 
 - [IBA Foundation Home](https://ibafoundation.org): Official institutional website and initiative directory.
 - [Full LLM Knowledge Base](https://ibafoundation.org/llms-full.txt): Complete institutional documentation, rubrics, program architectures, and builder FAQs for AI retrieval engines.
-- [Innovation Challenges](https://ibafoundation.org/#competitions): Active and upcoming engineering hackathons, tracks, and submission guidelines.
-- [Builder Fellowships](https://ibafoundation.org/#fellowships): Equity-free grant programs, residency cohorts, and application timelines.
-- [Foundational Pillars](https://ibafoundation.org/#about): Detailed institutional ethos, philosophy, and execution model.
-- [Project Showcase](https://ibafoundation.org/#showcase): Registry of open-source architectures, deployed prototypes, and builder case studies.
+- [Monograph Curriculum & Essays](https://ibafoundation.org/blog): 12-part peer-reviewed syllabus on engineering judgment, execution discipline, AI builder paradigms, and venture continuity.
+- [Builder Playbooks](https://ibafoundation.org/playbooks): Deep technical execution playbooks for hackathons, hardware prototyping, AI agents, and venture roadmaps.
+- [Innovation Challenges](https://ibafoundation.org/challenges): Active and upcoming engineering hackathons, tracks, and submission guidelines.
+- [Builder Fellowships](https://ibafoundation.org/fellowship): Equity-free grant programs, residency cohorts, and application timelines.
+- [Foundational Values](https://ibafoundation.org/values): Detailed institutional ethos, 5 core pillars, and execution philosophy.
+- [Project Showcase](https://ibafoundation.org/showcase): Registry of open-source architectures, deployed prototypes, and builder case studies.
+- [Regional Hubs](https://ibafoundation.org/locations): Regional innovation hubs and partner maker lab locations.
+- [Programs Directory](https://ibafoundation.org/programs): Comprehensive overview of challenges, sprints, workshops, and fellowships.
+- [Syndication Feed (RSS / Atom)](https://ibafoundation.org/feed.xml): Machine-readable XML syndication feed for all curriculum essays and research monographs.
