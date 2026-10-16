@@ -37,8 +37,9 @@ export default function BlogIndexPage() {
     { num: "01", title: "Potential Is Common. Demonstrated Ability Is Rare.", category: "Institutional essay", published: true, slug: "potential-is-common-demonstrated-ability-is-rare", desc: "Why talent remains undiscovered, why credentials are incomplete signals, and how practical challenges reveal ability." },
     { num: "02", title: "Ideas Are Cheap. Execution Is a Discipline.", category: "Builder's Journal", published: true, slug: "ideas-are-cheap-execution-is-a-discipline", desc: "Explore the gap between ideation and implementation, including constraints, iteration, and technical trade-offs." },
 
-    { num: "03", title: "The Art of Asking Better Questions", category: "Critical thinking", published: false, desc: "How problem framing changes the quality of solutions, turning vague objectives into testable questions." },
-    { num: "04", title: "AI Is Changing What It Means to Be a Builder", category: "Technology", published: false, desc: "How AI-assisted development alters prototyping velocity, verification requirements, and engineering judgment." },
+    { num: "03", title: "The Art of Asking Better Questions", category: "Critical thinking", published: true, slug: "the-art-of-asking-better-questions", desc: "How problem framing changes the quality of solutions, turning vague objectives into testable questions." },
+    { num: "04", title: "AI Is Changing What It Means to Be a Builder", category: "Technology", published: true, slug: "ai-is-changing-what-it-means-to-be-a-builder", desc: "How AI-assisted development alters prototyping velocity, verification requirements, and engineering judgment." },
+
     { num: "05", title: "How to Solve Problems Nobody Has Defined for You", category: "Competition strategy", published: false, desc: "A framework for handling ambiguous briefs, identifying constraints, testing assumptions, and scoping MVPs." },
     { num: "06", title: "The Prototype Is Not the Product", category: "Engineering", published: false, desc: "The gap between a compelling demo and a reliable production system, including testing, maintainability, and security." },
     { num: "07", title: "Constraints Are a Design Tool", category: "Innovation", published: false, desc: "How tight bounds on time, compute, and budget sharpen architectural decisions when handled deliberately." },
@@ -132,8 +133,9 @@ export default function BlogIndexPage() {
                 </p>
               </div>
               <div className="text-xs font-mono text-white/50">
-                2 PUBLISHED &bull; 10 IN PRODUCTION
+                4 PUBLISHED &bull; 8 IN PRODUCTION
               </div>
+
 
             </div>
 

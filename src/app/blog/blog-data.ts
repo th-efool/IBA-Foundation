@@ -495,7 +495,420 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "the-art-of-asking-better-questions",
+    title: "The Art of Asking Better Questions",
+    subtitle:
+      "How rigorous problem framing transforms low-value solutions into breakthrough engineering, and why turning vague objectives into testable hypotheses is the core builder skill.",
+    seriesNumber: "03 / 12",
+    category: "Critical Thinking",
+    date: "2026-10-16",
+    readTime: "11 min read",
+    author: {
+      name: "IBA Systems & Philosophy Division",
+      role: "Cognitive Engineering Group",
+      bio: "Researchers investigating problem representation, epistemic humility, and decision architectures in multidisciplinary engineering teams.",
+    },
+    metaDescription:
+      "A deep exploration of problem framing in engineering. Learn how Herbert Simon's ill-structured problems and cognitive framing turn vague objectives into breakthrough solutions.",
+    keywords: [
+      "problem framing",
+      "critical thinking for engineers",
+      "Herbert Simon ill-structured problems",
+      "testable hypotheses",
+      "engineering judgment",
+      "asking better questions",
+      "IBA Foundation",
+    ],
+    tldr: [
+      "Most catastrophic project failures are not failures of implementation, but failures of problem formulation—solving the wrong question with extreme efficiency.",
+      "Nobel laureate Herbert Simon (1973) proved that real-world engineering bottlenecks are inherently 'ill-structured'; the builder's primary job is bounding the problem space before writing code.",
+      "Daniel Kahneman and Amos Tversky demonstrated that narrow framing blinds decision-makers to 80% of viable solution architectures.",
+      "Converting a fuzzy ambition ('make this app faster') into a falsifiable question ('what happens to p99 latency when we replace the write-ahead log with memory-mapped buffers?') separates amateurs from master engineers.",
+      "IBA Foundation challenges evaluate problem framing as an explicit grading criterion, rewarding teams that interrogate underlying premises over those who rush into premature code.",
+    ],
+    heroImage: {
+      url: "/images/blog/03-hero.webp",
+      alt: "Conceptual architectural blueprint showing multiple diverging pathways radiating from a single precisely drawn question mark.",
+      caption: "Figure 1: The geometry of inquiry: Problem framing defines the topology of all possible solutions.",
+      prompt:
+        "Minimalist architectural illustration on deep black slate (#0D0C0A). Clean vector lines in warm gold (#DFB17B) and chalk white. A single geometric prism refracting an ambiguous beam of light into sharp, discrete mathematical trajectories. Technical drafting aesthetics, high contrast, clean negative space, zero text overlay.",
+    },
+    inlineImages: [
+      {
+        url: "/images/blog/03-framing-matrix.webp",
+        alt: "Diagram illustrating the funnel from vague objective to testable engineering hypothesis.",
+        caption: "Figure 2: The Inquiry Funnel: Transforming ambiguous mandates into verifiable systems tests.",
+        prompt:
+          "Clean editorial diagram. Dark background with glowing gold accents. Showing 4 stages of problem refinement: Raw Sentiment -> Bounded Constraint -> Metric Target -> Falsifiable Hypothesis. Precision typography, no visual clutter.",
+      },
+    ],
+    sections: [
+      {
+        id: "failure-of-problem-definition",
+        heading: "Why Do Most Engineering Teams Solve the Wrong Problems?",
+        directAnswer:
+          "Most engineering teams solve the wrong problems because humans possess a cognitive bias toward immediate action, mistaking rapid code generation for analytical progress without validating the premises of the task.",
+        paragraphs: [
+          "In technological development, the most expensive error is not a syntax bug or a failing integration test; it is the flawless execution of an irrelevant task. Teams spend quarters architecting distributed caching layers to optimize queries that should never have run, or designing elaborate onboarding funnels for products that solve non-existent pain points.",
+          "When handed an ambiguous directive—such as 'improve customer retention' or 'decentralize data storage'—the amateur instinct is to open an IDE and begin building immediately. Action feels productive; contemplation feels like hesitation. Yet without questioning who defined the objective, what hidden assumptions it rests upon, and what boundary conditions govern it, you are navigating with a broken compass.",
+          "As mathematician Richard Hamming famously challenged his fellow scientists at Bell Labs: 'If what you are doing is not important, and if you don’t think it is going to lead to something important, why are you working on it?' Framing is the discipline of ensuring that your technical energy is applied to the structural fulcrum rather than the surface symptoms.",
+        ],
+      },
+      {
+        id: "herbert-simon-ill-structured",
+        heading: "What Is Herbert Simon's Concept of 'Ill-Structured Problems'?",
+        directAnswer:
+          "Herbert Simon's concept of ill-structured problems demonstrates that real-world challenges lack definitive starting states, clear goal tests, and pre-packaged rules, requiring the engineer to construct the problem structure before seeking a solution.",
+        paragraphs: [
+          "In his seminal 1973 paper 'The Structure of Ill-Structured Problems' (Artificial Intelligence), Nobel laureate Herbert Simon established a critical boundary between textbook puzzles and real-world engineering. A well-structured problem (like chess or calculus) has explicit rules, well-defined starting states, and an unambiguous test for whether a solution is correct.",
+          "Real-world problems—such as mitigating urban grid congestion or designing a low-cost robotic actuator—are completely ill-structured. There is no predefined algorithm, no complete specification, and no oracle to declare when the work is finished. The crucial insight from Simon's research is that the problem space does not exist in the environment waiting to be found; it is actively synthesized by the problem-solver.",
+          "When you accept a client brief or hackathon prompt uncritically, you inherit their cognitive blind spots. The master engineer treats every prompt not as an order, but as an initial, noisy observation of an underlying reality that must be excavated through rigorous inquiry.",
+        ],
+        callout: {
+          title: "Simon's Invariant",
+          text: "In ill-structured environments, the quality of your solution is bounded strictly by the quality of your problem representation. A superior algorithm applied to a flawed representation always fails.",
+        },
+      },
+      {
+        id: "falsifiable-technical-questions",
+        heading: "How Do You Convert a Vague Objective Into a Falsifiable Technical Question?",
+        directAnswer:
+          "You convert a vague objective into a falsifiable technical question by stripping away qualitative adjectives, identifying measurable boundary conditions, and phrasing the objective as an empirical test with a clear falsification threshold.",
+        paragraphs: [
+          "The language of business and management is filled with fuzzy imperatives: 'make the database scalable,' 'improve model accuracy,' 'reduce latency.' These are aspirations, not specifications. They cannot be executed because they cannot be proven false.",
+          "To transform an ambition into an engineering question, you must pass it through three operational filters. First, replace qualitative adjectives with concrete metrics. Second, state the environmental stress conditions. Third, identify what evidence would disprove your hypothesis.",
+          "Consider the shift: instead of asking 'How do we make our indexing faster?', ask 'Can a trie-based in-memory index sustain 50,000 concurrent write operations per second while keeping p99 read latency under 12 milliseconds on an 8-core CPU?' The first question invites endless speculation; the second question can be answered deterministically by running a benchmark script.",
+        ],
+        table: {
+          caption: "Table 1: Problem Framing Progression — Vague Ambition to Falsifiable Hypothesis",
+          headers: [
+            "Domain",
+            "Vague Initial Objective",
+            "Reframed Engineering Question",
+            "Falsification Threshold",
+          ],
+          rows: [
+            [
+              "Distributed Systems",
+              "Make the database highly available.",
+              "Can the cluster maintain consensus during a 30% network partition without dropping write acknowledgments?",
+              "Any unacknowledged write or split-brain partition state.",
+            ],
+            [
+              "Applied AI",
+              "Build a smart customer support agent.",
+              "Can a 7B parameter SLM achieve >92% accuracy on structured intent extraction under 150ms total inference time?",
+              "Accuracy <92% or latency >150ms under peak load.",
+            ],
+            [
+              "Hardware Robotics",
+              "Design an affordable actuator arm.",
+              "Can a 3D-printed cycloidal drive deliver 40 Nm of torque across 1,000 cycles with backlash <0.2 degrees?",
+              "Gear tooth deformation or backlash exceeding 0.2 degrees.",
+            ],
+            [
+              "Clean Energy",
+              "Optimize solar inverter efficiency.",
+              "Does a gallium-nitride switching topology reduce thermal losses by at least 18% at 400V compared to silicon carbide?",
+              "Thermal loss reduction <18% measured via thermal imaging.",
+            ],
+          ],
+        },
+      },
+      {
+        id: "defeating-framing-bias",
+        heading: "What Role Does Question Framing Play in Defeating Cognitive Bias?",
+        directAnswer:
+          "Question framing defeats cognitive bias by exposing default assumptions, expanding the perceived option space, and forcing engineers to evaluate inverse scenarios before committing resources.",
+        paragraphs: [
+          "In their foundational 1981 paper 'The Framing of Decisions and the Psychology of Choice' (Science), Amos Tversky and Daniel Kahneman demonstrated that human decision-makers are hostage to how options are presented. When a problem is framed around avoiding loss, people take irrational risks; when framed around capturing gain, they become excessively cautious.",
+          "In software and hardware development, the default framing is almost always additive: 'What feature can we add to solve this?' This creates runaway bloat. A disciplined questioner immediately invokes the inverse frame: 'What can we remove from this architecture to eliminate the failure mode entirely?'",
+          "By deliberately rotating the frame—evaluating the problem from the perspective of an adversary, an air-gapped system, or an operator with zero budget—you break through the consensus trap that causes competing teams to build nearly identical, mediocre solutions.",
+        ],
+      },
+      {
+        id: "iba-framing-curriculum",
+        heading: "How Does IBA Foundation Train Builders to Interrogate Problem Statements?",
+        directAnswer:
+          "IBA Foundation trains builders to interrogate problem statements by embedding explicit framing audits into our challenge stages, requiring teams to defend their problem definitions before writing a line of code.",
+        paragraphs: [
+          "In traditional hackathons, teams are given a broad theme (like 'HealthTech' or 'Smart Cities') and immediately begin assembling frontend mockups. At IBA Foundation, we view that approach as counterproductive. Our multidisciplinary challenges begin with Stage 1: The Problem Framing Defense.",
+          "Before building, teams must submit an Inquiry Dossier. They must identify what assumptions the existing industry is taking for granted, map the physical constraints of the bottleneck, and articulate the single falsifiable hypothesis their prototype will test. Teams that identify a non-obvious, deeply grounded problem question consistently outperform teams that start with a polished solution in search of a problem.",
+          "Because in science, engineering, and venture creation, answers are commodities. The scarce, irreplaceable asset is the mind that knows precisely which question to ask.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does problem framing matter more than programming skill?",
+        answer:
+          "Exceptional programming applied to an ill-conceived problem produces technical debt. Rigorous problem framing ensures that your implementation effort targets the primary structural bottleneck, maximizing leverage and avoiding wasted engineering cycles.",
+      },
+      {
+        question: "How can I tell if my problem statement is too vague?",
+        answer:
+          "If your problem statement contains qualitative adjectives ('faster', 'smarter', 'easier') without numerical metrics or cannot be proven false by an integration test or benchmark, it is too vague to guide execution.",
+      },
+      {
+        question: "What is the difference between a goal and a hypothesis?",
+        answer:
+          "A goal is a desired future state ('reach 10,000 users'). A hypothesis is a testable proposition linking cause and effect under stated conditions ('integrating decentralized passkeys will reduce onboarding drop-off by 25%').",
+      },
+      {
+        question: "How do IBA Foundation challenges evaluate problem framing?",
+        answer:
+          "Judges evaluate teams on their understanding of root causes, constraint identification, and the validity of their testable hypotheses, weighting this phase equally with working prototype functionality.",
+      },
+      {
+        question: "How does asking better questions help solo builders?",
+        answer:
+          "Solo builders have finite hours and capital. Better questions act as an architectural filter, preventing solo developers from building bloated features and allowing them to prove product viability with minimal code.",
+      },
+    ],
+    references: [
+      {
+        citation: "Simon, H. A.",
+        source: "Artificial Intelligence, 4(3-4), 181–201",
+        year: 1973,
+        url: "https://doi.org/10.1016/0004-3702(73)90011-8",
+        keyFinding:
+          "Proved that real-world problems are ill-structured and that problem structuring is the decisive cognitive phase of problem-solving.",
+      },
+      {
+        citation: "Tversky, A., & Kahneman, D.",
+        source: "Science, 211(4481), 453–458",
+        year: 1981,
+        url: "https://doi.org/10.1126/science.7455683",
+        keyFinding:
+          "Demonstrated how shift in decision frames alters choices, proving that psychological framing effects govern risk appetite and option perception.",
+      },
+      {
+        citation: "Dewey, J.",
+        source: "How We Think. D. C. Heath & Co.",
+        year: 1910,
+        url: "https://en.wikipedia.org/wiki/How_We_Think",
+        keyFinding:
+          "Established the philosophical foundation of reflective inquiry, demonstrating that the perception of a perplexity defines the quality of thinking.",
+      },
+      {
+        citation: "Hamming, R. W.",
+        source: "You and Your Research. Bell Communications Research Colloquium",
+        year: 1986,
+        url: "https://www.cs.virginia.edu/~robins/YouAndYourResearch.html",
+        keyFinding:
+          "Urged scientists and engineers to identify and work exclusively on the primary open questions in their fields rather than trivial incremental tasks.",
+      },
+    ],
+  },
+  {
+    slug: "ai-is-changing-what-it-means-to-be-a-builder",
+    title: "AI Is Changing What It Means to Be a Builder",
+    subtitle:
+      "As generative models drive the cost of raw code syntax to zero, the value of engineering judgment, invariant verification, and system architecture rises exponentially.",
+    seriesNumber: "04 / 12",
+    category: "Technology",
+    date: "2026-10-16",
+    readTime: "12 min read",
+    author: {
+      name: "IBA Autonomous Systems Lab",
+      role: "Applied AI Research Group",
+      bio: "Engineers and researchers evaluating autonomous coding agents, deterministic verifiers, and human-in-the-loop systems architectures.",
+    },
+    metaDescription:
+      "An analytical examination of how AI-assisted programming transforms software development. Explore Jevons paradox, the verification bottleneck, and the future of engineering judgment.",
+    keywords: [
+      "AI software engineering",
+      "future of programming",
+      "Jevons paradox software",
+      "verification bottleneck",
+      "autonomous coding agents",
+      "engineering judgment",
+      "IBA Foundation",
+    ],
+    tldr: [
+      "Generative AI has commoditized raw syntax generation, inverting the traditional economics of software development.",
+      "The Jevons Paradox guarantees that as the marginal cost of writing code collapses, global demand for complex software systems will multiply, raising the stakes of architectural reliability.",
+      "The primary cognitive bottleneck in software is no longer synthesis (writing code), but verification (determining whether generated code preserves invariants and security boundaries).",
+      "Hallucinations, subtle concurrency flaws, and silent semantic drift make formal verification, fuzz testing, and telemetry the core literacies of the modern engineer.",
+      "IBA Foundation challenges prepare builders for this frontier by evaluating system architecture, adversarial stress testing, and telemetry rather than basic typing speed.",
+    ],
+    heroImage: {
+      url: "/images/blog/04-hero.webp",
+      alt: "Luminescent neural network graph intersecting with a rigid, high-precision mechanical caliper on a deep slate surface.",
+      caption: "Figure 1: Synthesis meets Verification: The union of probabilistic generation and deterministic engineering rigor.",
+      prompt:
+        "Editorial technology photograph on dark matte slate (#0D0C0A). A radiant, multi-dimensional neural network data graph casting golden amber light (#DFB17B) onto a hardened steel precision vernier caliper. Intersecting planes of probabilistic computation and deterministic mechanical measurement. Moody laboratory lighting, extreme tactile fidelity, zero text overlay.",
+    },
+    inlineImages: [
+      {
+        url: "/images/blog/04-verification-bottleneck.webp",
+        alt: "Chart contrasting the plummeting cost of code generation against the rising complexity of code verification.",
+        caption: "Figure 2: The Verification Inversion: Generation cost approaches zero while verification complexity climbs exponentially.",
+        prompt:
+          "Minimalist data graph with dark obsidian canvas. Displaying two diverging curves: a downward sloping gold curve representing 'Cost of Code Generation' falling toward zero, and an upward sloping cream curve representing 'Verification & Maintenance Cost' climbing with system complexity. Clean engineering aesthetic.",
+      },
+    ],
+    sections: [
+      {
+        id: "commoditization-of-syntax",
+        heading: "How Does Generative AI Invert the Economics of Software Engineering?",
+        directAnswer:
+          "Generative AI inverts the economics of software engineering by driving the marginal cost of code syntax to near zero, shifting the scarce economic asset from typing code to specifying requirements and verifying correctness.",
+        paragraphs: [
+          "For six decades, software engineering was gated by fluency in computer syntax. To build an application, a human had to memorize language primitives, type semicolons, manage memory allocations, and hand-craft boilerplate CRUD endpoints. A developer's market value was directly correlated with how quickly they could translate ideas into syntactically valid code.",
+          "Autonomous coding agents and modern LLMs have dissolved this barrier. Today, generating 500 lines of functional TypeScript or Python takes seconds. The mechanical act of typing software has been thoroughly commoditized.",
+          "However, this commoditization does not eliminate the engineer; it elevates them. When generation is free, the value shifts entirely to the boundaries: What should the system do? Where are the security failure modes? How do these distributed services maintain state consistency during network failures? In an age of infinite code, architectural discernment is the only durable moat.",
+        ],
+      },
+      {
+        id: "jevons-paradox-software",
+        heading: "Why Does the Jevons Paradox Apply to AI-Assisted Code Generation?",
+        directAnswer:
+          "The Jevons Paradox applies to AI-assisted code generation because making software production vastly more efficient causes global consumption of software systems to expand exponentially rather than reducing the need for engineers.",
+        paragraphs: [
+          "In 1865, English economist William Stanley Jevons made an observation that confounded Victorian policymakers: when James Watt's steam engine dramatically increased the efficiency of coal consumption, total coal usage did not decrease. It exploded. Higher efficiency reduced costs, making steam power viable across thousands of new industries that previously could not afford it.",
+          "We are witnessing the exact same dynamic in software. Pessimists predict that AI code generators will eliminate software engineers. But Jevons Paradox teaches us that making software 10x cheaper to generate will unlock an insatiable demand for software in sectors previously deemed cost-prohibitive: custom edge robotics, real-time biological modeling, hyper-local microgrids, and bespoke organizational agents.",
+          "The volume of code deployed to production will grow by orders of magnitude. And because software systems are interconnected, the surface area for catastrophic system failures, latency cascades, and security vulnerabilities will multiply alongside it. We will not need fewer builders; we will need builders of radically higher judgment.",
+        ],
+        callout: {
+          title: "The Jevons Dynamic",
+          text: "When software generation cost drops by 90%, total system complexity increases by 10x. The bottleneck moves from typing velocity to cognitive systems control.",
+        },
+      },
+      {
+        id: "verification-bottleneck",
+        heading: "What Is the Verification Bottleneck and Why Does It Elevate Human Judgment?",
+        directAnswer:
+          "The verification bottleneck is the fundamental asymmetry where generating plausible code requires seconds, but rigorously proving that the code contains no subtle concurrency bugs, hallucinations, or security vulnerabilities requires deep cognitive analysis.",
+        paragraphs: [
+          "Probabilistic language models generate text based on statistical likelihood, not deterministic truth. Consequently, AI-generated code is notorious for subtle, insidious failure modes: subtly misusing an authentication token, introducing a silent race condition in an asynchronous loop, or hallucinating a non-existent method that fails only under edge-case load.",
+          "Reading someone else's code is cognitively harder than writing your own. When an AI generates a 2,000-line pull request, the human reviewer must reconstruct the author's mental model, trace edge cases, and verify system invariants. If the reviewer lacks deep domain mastery, they succumb to 'automation bias'—rubber-stamping the generated code because it looks plausible.",
+          "This is the verification bottleneck. A junior developer who does not understand database isolation levels cannot evaluate an AI-generated migration script. As generation accelerates, the premium on deep first-principle understanding—computer architecture, operating systems, networking protocols, and formal verification—reaches an all-time high.",
+        ],
+        table: {
+          caption: "Table 1: Paradigm Shift — Legacy Software Craft vs AI-Augmented Systems Engineering",
+          headers: [
+            "Dimension",
+            "Legacy Software Engineering (1990-2022)",
+            "AI-Augmented Systems Engineering (2024+)",
+          ],
+          rows: [
+            [
+              "Primary Activity",
+              "Typing syntax, writing boilerplate, manual debugging",
+              "System specification, invariant verification, adversarial auditing",
+            ],
+            [
+              "Scarce Skill",
+              "Language syntax fluency & framework APIs",
+              "System architecture, domain mechanics, critical judgment",
+            ],
+            [
+              "Development Bottleneck",
+              "Code generation velocity (Keystrokes per hour)",
+              "Verification & edge-case discovery (Validation rigor)",
+            ],
+            [
+              "Failure Mode",
+              "Syntax errors, compiler rejections, typo bugs",
+              "Silent semantic drift, security hallucinations, architectural bloat",
+            ],
+            [
+              "Role of the Engineer",
+              "Individual craftsman / human compiler",
+              "Orchestrator, specification architect, and verifier",
+            ],
+          ],
+        },
+      },
+      {
+        id: "builder-as-architect",
+        heading: "How Does the Role of a Builder Shift from Synthesizer to Systems Architect?",
+        directAnswer:
+          "The role of a builder shifts from code synthesizer to systems architect by replacing mechanical typing with the rigorous authoring of specifications, boundaries, and evaluation harnesses that govern autonomous agents.",
+        paragraphs: [
+          "In his essay on 'Software 2.0', computer scientist Andrej Karpathy pointed out that programming was shifting from explicitly writing procedural instructions to curating datasets and loss functions. In the current era of agentic tools, we are entering Software 3.0: programming in structured natural language, telemetry constraints, and verification harnesses.",
+          "The modern builder functions like the chief engineer of a skyscraper. The chief engineer does not pour concrete or lay steel beams by hand; specialized cranes and crews execute the physical placement. But the chief engineer must understand the structural mathematics, wind load dynamics, soil mechanics, and safety tolerances.",
+          "If the architecture is flawed, the skyscraper collapses regardless of how fast the concrete was poured. In the same way, the builder who thrives in the AI era is the one who designs the data model, defines the API contracts, sets the fault-tolerance parameters, and uses AI agents as high-velocity power tools.",
+        ],
+      },
+      {
+        id: "iba-technical-curriculum",
+        heading: "What New Competencies Does IBA Foundation Test in the Age of Intelligent Tools?",
+        directAnswer:
+          "IBA Foundation tests modern builder competencies by challenging participants to deploy, audit, and benchmark complex systems under live adversarial conditions where AI generation alone is insufficient to win.",
+        paragraphs: [
+          "At IBA Foundation, we do not ban modern development tools or AI assistants. In our hackathons and fellowships, builders are encouraged to use every high-leverage tool available. However, our evaluation criteria make superficial prompting useless.",
+          "Our challenges test what happens after the code is generated. We subject prototypes to automated fuzz testing, introduce synthetic packet drops into distributed networks, and inspect how systems handle corrupted data streams. We evaluate how cleanly the builder structured their database migrations and whether they can explain every architectural trade-off in their codebase.",
+          "By holding builders to institutional standards of reliability, maintainability, and security, we ensure that our fellows do not merely know how to prompt an AI model, but possess the deep engineering foundations required to lead the next generation of consequential technology.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Will generative AI make learning to code obsolete?",
+        answer:
+          "No. AI commoditizes typing syntax, but makes deep computational thinking, system architecture, and verification literacy more valuable than ever. To audit AI output, you must understand underlying computer science principles.",
+      },
+      {
+        question: "How does IBA Foundation handle AI tools in its competitions?",
+        answer:
+          "We permit and encourage AI tooling. However, challenges are designed around complex system constraints, live adversarial tests, and architectural defenses that require genuine human engineering judgment to succeed.",
+      },
+      {
+        question: "What is 'automation bias' in software engineering?",
+        answer:
+          "Automation bias is the human tendency to trust computer-generated output uncritically. In software, it manifests when engineers accept AI-generated code without checking for security holes, edge cases, or memory leaks.",
+      },
+      {
+        question: "What skills should aspiring software engineers focus on today?",
+        answer:
+          "Focus on systems design, distributed consensus, networking protocols, formal testing and verification, database internals, and domain-specific mechanics (such as robotics, cryptography, or climate physics).",
+      },
+      {
+        question: "Why does verification matter more than generation speed?",
+        answer:
+          "A bug shipped 10x faster is still a bug. In production systems handling financial transactions, health records, or physical hardware, correctness and reliability are paramount; speed without verification is liability.",
+      },
+    ],
+    references: [
+      {
+        citation: "Karpathy, A.",
+        source: "Software 2.0. Medium & Andrej Karpathy Blog",
+        year: 2017,
+        url: "https://karpathy.medium.com/software-2-0-2e6102302970",
+        keyFinding:
+          "Described the structural shift from explicit algorithmic code written by humans to models parameterized by optimization under loss functions.",
+      },
+      {
+        citation: "Jevons, W. S.",
+        source: "The Coal Question: An Inquiry Concerning the Progress of the Nation. Macmillan and Co.",
+        year: 1865,
+        url: "https://en.wikipedia.org/wiki/Jevons_paradox",
+        keyFinding:
+          "Formulated the economic paradox where increasing the efficiency of a resource's use leads to an overall increase, rather than a decrease, in its consumption.",
+      },
+      {
+        citation: "Brooks, F. P.",
+        source: "No Silver Bullet—Essence and Accident in Software Engineering. IEEE Computer, 20(4), 10–19",
+        year: 1987,
+        url: "https://doi.org/10.1109/MC.1987.1663532",
+        keyFinding:
+          "Demonstrated that the essential difficulty of software is the conceptual modeling of complex interlocking concepts, not the accidental difficulty of typing code.",
+      },
+      {
+        citation: "Leveson, N. G.",
+        source: "Engineering a Safer World: Systems Thinking Applied to Safety. MIT Press",
+        year: 2011,
+        url: "https://mitpress.mit.edu/9780262533690/engineering-a-safer-world/",
+        keyFinding:
+          "Established that safety and reliability in complex software systems emerge from component interactions and feedback loops rather than isolated unit correctness.",
+      },
+    ],
+  },
 ];
+
 
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

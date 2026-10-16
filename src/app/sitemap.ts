@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { getAllBlogPosts } from './blog/blog-data';
 
 interface SitemapRoute {
   path: string;
@@ -80,32 +81,29 @@ const routes: SitemapRoute[] = [
     changeFrequency: 'weekly',
   },
   {
-    path: '/blog/potential-is-common-demonstrated-ability-is-rare',
-    priority: 0.9,
-    changeFrequency: 'monthly',
-  },
-  {
-    path: '/blog/ideas-are-cheap-execution-is-a-discipline',
-    priority: 0.9,
-    changeFrequency: 'monthly',
-  },
-  {
     path: '/feed.xml',
     priority: 0.8,
     changeFrequency: 'daily',
   },
 ];
 
-
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = (process.env.NEXT_PUBLIC_SITE_URL || 'https://ibafoundation.org').replace(/\/+$/, '');
   const now = new Date();
 
-  return routes.map((route) => ({
+  const blogRoutes: SitemapRoute[] = getAllBlogPosts().map((post) => ({
+    path: `/blog/${post.slug}`,
+    priority: 0.9,
+    changeFrequency: 'monthly' as const,
+  }));
+
+  const combinedRoutes = [...routes, ...blogRoutes];
+
+  return combinedRoutes.map((route) => ({
     url: route.path === '/' ? baseUrl : `${baseUrl}${route.path}`,
     lastModified: now,
     changeFrequency: route.changeFrequency,
     priority: route.priority,
   }));
 }
+
