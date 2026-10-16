@@ -46,8 +46,8 @@ export default function BlogIndexPage() {
     { num: "08", title: "What Should a Merit-Based Innovation Competition Reward?", category: "Talent development", published: true, slug: "what-should-a-merit-based-innovation-competition-reward", desc: "Originality, reasoning, implementation, and avoiding the trap of rewarding superficial presentations." },
     { num: "09", title: "Learning by Building: Why Feedback Matters More Than Perfect Plans", category: "Learning", published: true, slug: "learning-by-building-why-feedback-matters-more-than-perfect-plans", desc: "The cycle of hypothesis, rapid prototype, adversarial testing, and revision over passive studying." },
     { num: "10", title: "FinTech Is More Than Putting Banking on a Screen", category: "Applied research", published: true, slug: "fintech-is-more-than-putting-banking-on-a-screen", desc: "Deep systems examination of trust, fraud detection, decentralized identity, and low-latency settlement." },
-    { num: "11", title: "Why the Hardest Problems Need People From Different Disciplines", category: "Open innovation", published: false, desc: "Why breakthrough engineering requires fusing hardware, economics, biology, and domain mechanics." },
-    { num: "12", title: "From Competition to Opportunity: What Happens After the Winners Are Announced?", category: "Vision", published: false, desc: "How competition prototypes transition into venture-scale companies, open-source standards, and fellowships." },
+    { num: "11", title: "Why the Hardest Problems Need People From Different Disciplines", category: "Open innovation", published: true, slug: "why-the-hardest-problems-need-people-from-different-disciplines", desc: "Why breakthrough engineering requires fusing hardware, economics, biology, and domain mechanics." },
+    { num: "12", title: "From Competition to Opportunity: What Happens After the Winners Are Announced?", category: "Vision", published: true, slug: "from-competition-to-opportunity-what-happens-after-the-winners-are-announced", desc: "How competition prototypes transition into venture-scale companies, open-source standards, and fellowships." },
   ];
 
   return (
@@ -132,8 +132,8 @@ export default function BlogIndexPage() {
                   Systematic exploration of talent economics, engineering rigor, and builder agency.
                 </p>
               </div>
-              <div className="text-xs font-mono text-white/50">
-                10 PUBLISHED &bull; 2 IN PRODUCTION
+              <div className="text-xs font-mono text-[#DFB17B]">
+                ALL 12 PUBLISHED &bull; COMPLETE SYLLABUS
               </div>
 
 
