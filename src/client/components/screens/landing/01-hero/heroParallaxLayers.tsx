@@ -30,6 +30,8 @@ export function HeroParallaxLayers() {
             return;
         }
 
+        const bgVideoLayer = document.getElementById("hero-bg-video-layer");
+
         // Normalized target & current pointer coordinates in [-1, 1]
         let targetX = 0;
         let targetY = 0;
@@ -37,18 +39,26 @@ export function HeroParallaxLayers() {
         let currentY = 0;
         let rafId: number | null = null;
 
-        // Movement multipliers (in px) per layer depth
-        // Layer 2B (Drafting Plane): deeper mid-ground behind headline -> subtle inverse drift
-        const mult2B = { x: -9, y: -5 };
-        // Layer 2A (Architectural Frames): suspended mid-ground -> moderate drift
-        const mult2A = { x: 14, y: 8 };
-        // Layer 2C (Engineered Sculpture): closest foreground -> strongest parallax offset
-        const mult2C = { x: 24, y: 14 };
+        // Minute movement multipliers (in px) per layer depth
+        // Layer 1 (Background Video): slightly zoomed (1.035x) so minute camera drift never goes out of frame
+        const multVideo = { x: -6, y: -3.5 };
+        // Layer 2B (Drafting Plane): subtle mid-background drift
+        const mult2B = { x: -3.5, y: -2 };
+        // Layer 2A (Architectural Frames): gentle suspended mid-ground drift
+        const mult2A = { x: 7, y: 4 };
+        // Layer 2C (Engineered Sculpture): remains mostly static (micro-movement only)
+        const mult2C = { x: 1.2, y: 0.6 };
 
         const updateTransforms = () => {
-            // Smooth exponential damping (lerp factor 0.055 for restrained, weighted feel)
-            currentX += (targetX - currentX) * 0.055;
-            currentY += (targetY - currentY) * 0.055;
+            // Smooth exponential damping (lerp factor 0.045 for very subtle, weighted camera feel)
+            currentX += (targetX - currentX) * 0.045;
+            currentY += (targetY - currentY) * 0.045;
+
+            if (bgVideoLayer) {
+                const dx = (currentX * multVideo.x).toFixed(2);
+                const dy = (currentY * multVideo.y).toFixed(2);
+                bgVideoLayer.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale3d(1.035, 1.035, 1)`;
+            }
 
             if (layer2BRef.current) {
                 const dx = (currentX * mult2B.x).toFixed(2);
@@ -76,6 +86,9 @@ export function HeroParallaxLayers() {
                 currentX = targetX;
                 currentY = targetY;
                 if (targetX === 0 && targetY === 0) {
+                    if (bgVideoLayer) {
+                        bgVideoLayer.style.transform = "translate3d(0px, 0px, 0px) scale3d(1.035, 1.035, 1)";
+                    }
                     if (layer2BRef.current) layer2BRef.current.style.transform = "translate3d(0px, 0px, 0px)";
                     if (layer2ARef.current) layer2ARef.current.style.transform = "translate3d(0px, 0px, 0px)";
                     if (layer2CRef.current) layer2CRef.current.style.transform = "translate3d(0px, 0px, 0px)";

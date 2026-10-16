@@ -43,27 +43,33 @@ export function HeroBackground() {
 
     return (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-            {/* Layer 1: Static Background Video (Flipped & Compressed Layer1.mp4) */}
-            <video
-                ref={videoRef}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                poster="/images/hero-poster.webp"
-                className="
-                    absolute
-                    inset-0
-                    w-full
-                    h-full
-                    object-cover
-                    object-center
-                "
+            {/* Layer 1: Slightly Zoomed Background Video Wrapper for Minute Parallax Panning */}
+            <div
+                id="hero-bg-video-layer"
+                className="absolute inset-0 w-full h-full will-change-transform origin-center"
+                style={{ transform: "translate3d(0px, 0px, 0px) scale3d(1.035, 1.035, 1)" }}
             >
-                <source src="/videos/hero.webm" type="video/webm" />
-                <source src="/videos/hero.mp4" type="video/mp4" />
-            </video>
+                <video
+                    ref={videoRef}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    poster="/images/hero-poster.webp"
+                    className="
+                        absolute
+                        inset-0
+                        w-full
+                        h-full
+                        object-cover
+                        object-center
+                    "
+                >
+                    <source src="/videos/hero.webm" type="video/webm" />
+                    <source src="/videos/hero.mp4" type="video/mp4" />
+                </video>
+            </div>
 
             {/* Left Reading Gradient — calibrated to match FinaLook.png's rich architectural contrast */}
             <div
