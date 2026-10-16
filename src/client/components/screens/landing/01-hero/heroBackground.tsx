@@ -43,11 +43,11 @@ export function HeroBackground() {
 
     return (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
-            {/* Layer 1: Slightly Zoomed Background Video Wrapper for Minute Parallax Panning */}
+            {/* Layer 1: Oversized (-inset-[18px]) Background Video Wrapper for Subpixel-Smooth 1:1 GPU Translation */}
             <div
                 id="hero-bg-video-layer"
-                className="absolute inset-0 w-full h-full will-change-transform origin-center"
-                style={{ transform: "translate3d(0px, 0px, 0px) scale3d(1.035, 1.035, 1)" }}
+                className="absolute -inset-[18px] will-change-transform [backface-visibility:hidden] [transform-style:preserve-3d]"
+                style={{ transform: "translate3d(0px, 0px, 0px)" }}
             >
                 <video
                     ref={videoRef}
@@ -57,13 +57,17 @@ export function HeroBackground() {
                     playsInline
                     preload="auto"
                     poster="/images/hero-poster.webp"
+                    onEnded={(e) => {
+                        const v = e.currentTarget;
+                        v.currentTime = 0;
+                        v.play().catch(() => {});
+                    }}
                     className="
-                        absolute
-                        inset-0
                         w-full
                         h-full
                         object-cover
                         object-center
+                        [backface-visibility:hidden]
                     "
                 >
                     <source src="/videos/hero.webm" type="video/webm" />

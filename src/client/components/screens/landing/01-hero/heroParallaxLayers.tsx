@@ -4,15 +4,16 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 /**
- * Layer 2 — Interactive Pseudo-3D Spatial Foreground Elements
+ * Layer 2 — Cohesive Multi-Plane 3D Spatial Parallax Engine
  *
- * Places Layer2B (Drafting Plane), Layer2A (Architectural Frames), and
- * Layer2C (Engineered Foreground Sculpture) as independent transparent DOM elements
- * above Layer 1 (video) and behind Layer 3 (static UI & typography), matching FinaLook.png.
+ * Physical depth hierarchy (from farthest to closest):
+ * 1. Layer 1 (Background Video): Farthest architectural hall — gentle base camera pan (-5px X, -2.5px Y).
+ * 2. Layer 2B (Drafting Plane): Deep mid-ground glass blueprint — floats in front of the pillars (-9.5px X, -4.5px Y).
+ * 3. Layer 2A (Architectural Frames): Closer suspended ceiling structure — stronger horizontal parallax (-14px X, -5.5px Y).
+ * 4. Layer 2C (Engineered Sculpture): Heavy foreground anchor right in front of the lens — mostly static (-1.2px X, -0.5px Y).
  *
- * Applies hardware-accelerated `transform: translate3d(x, y, 0)` to each asset independently
- * with distinct depth multipliers, smooth lerp damping, smooth return on pointer leave,
- * and automatic disable on touch devices or `prefers-reduced-motion: reduce`.
+ * Uses frame-rate-independent (dt) double-smoothed fluid tripod damping so velocity never
+ * jumps instantaneously on mouse movement, eliminating jitter/stepping on the video and PNG layers.
  */
 export function HeroParallaxLayers() {
     const layer2ARef = useRef<HTMLDivElement>(null);
@@ -32,67 +33,83 @@ export function HeroParallaxLayers() {
 
         const bgVideoLayer = document.getElementById("hero-bg-video-layer");
 
-        // Normalized target & current pointer coordinates in [-1, 1]
-        let targetX = 0;
-        let targetY = 0;
+        // Raw normalized cursor target in [-1, 1]
+        let rawTargetX = 0;
+        let rawTargetY = 0;
+
+        // Stage 1 smoothed target (eliminates instantaneous velocity spikes / jerk on mouse move)
+        let smoothTargetX = 0;
+        let smoothTargetY = 0;
+
+        // Stage 2 rendered camera position
         let currentX = 0;
         let currentY = 0;
+
         let rafId: number | null = null;
+        let lastTime = performance.now();
 
-        // Minute movement multipliers (in px) per layer depth
-        // Layer 1 (Background Video): slightly zoomed (1.035x) so minute camera drift never goes out of frame
-        const multVideo = { x: -6, y: -3.5 };
-        // Layer 2B (Drafting Plane): subtle mid-background drift
-        const mult2B = { x: -3.5, y: -2 };
-        // Layer 2A (Architectural Frames): gentle suspended mid-ground drift
-        const mult2A = { x: 7, y: 4 };
-        // Layer 2C (Engineered Sculpture): remains mostly static (micro-movement only)
-        const mult2C = { x: 1.2, y: 0.6 };
+        // Cohesive unidirectional 3D camera parallax multipliers (in px)
+        // Moving cursor right/down shifts the scene left/up proportionally to each plane's depth:
+        const multVideo = { x: -5.0, y: -2.5 };   // Farthest: Background laboratory hall
+        const mult2B = { x: -9.5, y: -4.5 };      // Mid-background: Translucent drafting plane
+        const mult2A = { x: -14.0, y: -5.5 };     // Mid-foreground: Suspended ceiling frames
+        const mult2C = { x: -1.2, y: -0.5 };      // Near foreground anchor: Brass armillary sphere (mostly static)
 
-        const updateTransforms = () => {
-            // Smooth exponential damping (lerp factor 0.045 for very subtle, weighted camera feel)
-            currentX += (targetX - currentX) * 0.045;
-            currentY += (targetY - currentY) * 0.045;
-
+        const applyTransforms = (x: number, y: number) => {
             if (bgVideoLayer) {
-                const dx = (currentX * multVideo.x).toFixed(2);
-                const dy = (currentY * multVideo.y).toFixed(2);
-                bgVideoLayer.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale3d(1.035, 1.035, 1)`;
+                const dx = (x * multVideo.x).toFixed(4);
+                const dy = (y * multVideo.y).toFixed(4);
+                bgVideoLayer.style.transform = `translate3d(${dx}px, ${dy}px, 0px)`;
             }
 
             if (layer2BRef.current) {
-                const dx = (currentX * mult2B.x).toFixed(2);
-                const dy = (currentY * mult2B.y).toFixed(2);
-                layer2BRef.current.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+                const dx = (x * mult2B.x).toFixed(4);
+                const dy = (y * mult2B.y).toFixed(4);
+                layer2BRef.current.style.transform = `translate3d(${dx}px, ${dy}px, 0px)`;
             }
 
             if (layer2ARef.current) {
-                const dx = (currentX * mult2A.x).toFixed(2);
-                const dy = (currentY * mult2A.y).toFixed(2);
-                layer2ARef.current.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+                const dx = (x * mult2A.x).toFixed(4);
+                const dy = (y * mult2A.y).toFixed(4);
+                layer2ARef.current.style.transform = `translate3d(${dx}px, ${dy}px, 0px)`;
             }
 
             if (layer2CRef.current) {
-                const dx = (currentX * mult2C.x).toFixed(2);
-                const dy = (currentY * mult2C.y).toFixed(2);
-                layer2CRef.current.style.transform = `translate3d(${dx}px, ${dy}px, 0)`;
+                const dx = (x * mult2C.x).toFixed(4);
+                const dy = (y * mult2C.y).toFixed(4);
+                layer2CRef.current.style.transform = `translate3d(${dx}px, ${dy}px, 0px)`;
             }
+        };
+
+        const updateTransforms = (now: number) => {
+            // Frame-rate independent delta time (clamped to avoid jumps after tab switch)
+            const dt = Math.min((now - lastTime) / 1000, 0.05);
+            lastTime = now;
+
+            // Critically damped 2-stage fluid filter (time-constant independent of 60Hz/120Hz/144Hz)
+            const inputAlpha = 1 - Math.exp(-10 * dt);
+            const cameraAlpha = 1 - Math.exp(-4.5 * dt);
+
+            smoothTargetX += (rawTargetX - smoothTargetX) * inputAlpha;
+            smoothTargetY += (rawTargetY - smoothTargetY) * inputAlpha;
+
+            currentX += (smoothTargetX - currentX) * cameraAlpha;
+            currentY += (smoothTargetY - currentY) * cameraAlpha;
+
+            applyTransforms(currentX, currentY);
 
             const isSettled =
-                Math.abs(targetX - currentX) < 0.001 &&
-                Math.abs(targetY - currentY) < 0.001;
+                Math.abs(rawTargetX - currentX) < 0.0004 &&
+                Math.abs(rawTargetY - currentY) < 0.0004 &&
+                Math.abs(rawTargetX - smoothTargetX) < 0.0004 &&
+                Math.abs(rawTargetY - smoothTargetY) < 0.0004;
 
             if (isSettled) {
-                currentX = targetX;
-                currentY = targetY;
-                if (targetX === 0 && targetY === 0) {
-                    if (bgVideoLayer) {
-                        bgVideoLayer.style.transform = "translate3d(0px, 0px, 0px) scale3d(1.035, 1.035, 1)";
-                    }
-                    if (layer2BRef.current) layer2BRef.current.style.transform = "translate3d(0px, 0px, 0px)";
-                    if (layer2ARef.current) layer2ARef.current.style.transform = "translate3d(0px, 0px, 0px)";
-                    if (layer2CRef.current) layer2CRef.current.style.transform = "translate3d(0px, 0px, 0px)";
-                }
+                currentX = rawTargetX;
+                currentY = rawTargetY;
+                smoothTargetX = rawTargetX;
+                smoothTargetY = rawTargetY;
+                applyTransforms(currentX, currentY);
                 rafId = null;
             } else {
                 rafId = requestAnimationFrame(updateTransforms);
@@ -101,6 +118,7 @@ export function HeroParallaxLayers() {
 
         const ensureLoopRunning = () => {
             if (rafId === null) {
+                lastTime = performance.now();
                 rafId = requestAnimationFrame(updateTransforms);
             }
         };
@@ -114,15 +132,14 @@ export function HeroParallaxLayers() {
             const nx = ((e.clientX - rect.left) / rect.width) * 2 - 1;
             const ny = ((e.clientY - rect.top) / rect.height) * 2 - 1;
 
-            targetX = Math.max(-1, Math.min(1, nx));
-            targetY = Math.max(-1, Math.min(1, ny));
+            rawTargetX = Math.max(-1, Math.min(1, nx));
+            rawTargetY = Math.max(-1, Math.min(1, ny));
             ensureLoopRunning();
         };
 
         const handlePointerLeave = () => {
-            // Smoothly ease back to origin (0, 0, 0) on pointer exit
-            targetX = 0;
-            targetY = 0;
+            rawTargetX = 0;
+            rawTargetY = 0;
             ensureLoopRunning();
         };
 
@@ -153,6 +170,7 @@ export function HeroParallaxLayers() {
                     w-[32%] sm:w-[21.2%]
                     aspect-[711/1185]
                     will-change-transform
+                    [backface-visibility:hidden]
                     opacity-80
                 "
                 style={{ transform: "translate3d(0px, 0px, 0px)" }}
@@ -178,6 +196,7 @@ export function HeroParallaxLayers() {
                     w-[34%] sm:w-[26.2%]
                     aspect-[1001/790]
                     will-change-transform
+                    [backface-visibility:hidden]
                 "
                 style={{ transform: "translate3d(0px, 0px, 0px)" }}
             >
@@ -202,6 +221,7 @@ export function HeroParallaxLayers() {
                     w-[40%] sm:w-[26.5%]
                     aspect-[929/1041]
                     will-change-transform
+                    [backface-visibility:hidden]
                 "
                 style={{ transform: "translate3d(0px, 0px, 0px)" }}
             >

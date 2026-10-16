@@ -1,0 +1,58 @@
+# IBA Foundation
+
+> IBA Foundation is an institution empowering the next generation of builders, engineers, and researchers to turn potential into practice through challenges, collaborative building sprints, fellowships, and real-world problem solving.
+
+## Organization & Mission
+
+- **Entity Name**: IBA Foundation
+- **Tagline**: "Potential, put into practice."
+- **Official URL**: https://ibafoundation.org
+- **Core Purpose**: IBA Foundation is an institution—not merely an event organizer—dedicated to establishing permanent conditions where emerging talent proves capability through execution. By transitioning builders from passive theoretical learning to active engineering, the Foundation bridges the divide between ambitious ideas and real-world deployment.
+- **Focus Areas**: Artificial Intelligence & Systems, Climate & Clean Energy, Hardware & Robotics, Decentralized Technologies, and Applied Sciences.
+- **Operating Philosophy**: Talent is universally distributed, but opportunities to demonstrate proof-of-work on consequential problems are scarce. IBA Foundation creates structured platforms where raw ability is transformed into tangible technological capability.
+
+## The 5 Foundational Pillars
+
+1. **Spark Curiosity**: Igniting intrinsic motivation to interrogate hard questions and tackle frontier challenges across science, engineering, and society.
+2. **Make Building Happen**: Lowering barriers to action by providing workspaces, toolchains, compute resources, and collaborative sprints that accelerate zero-to-one prototyping.
+3. **Discover Potential**: Identifying exceptional, non-traditional talent through open, meritocratic challenges judged solely on technical rigor, critical thought, and problem-solving execution.
+4. **Connect Ambitious People**: Curating high-density networks of builders, domain specialists, researchers, and mentors who challenge and elevate one another across disciplinary lines.
+5. **Create Pathways Forward**: Supplying post-challenge continuity through equity-free builder grants, sustained fellowships, venture incubation, and industry research partnerships.
+
+## Key Programs
+
+### 1. Innovation Challenges & Hackathons
+- Intensive, multidisciplinary competitions designed to solve pressing real-world bottlenecks.
+- Core tracks include:
+  - **AI & Systems**: Scalable infrastructure, autonomous agents, neural architectures, and safety alignment.
+  - **Climate & Energy**: Grid intelligence, carbon capture systems, sustainable materials, and renewables optimization.
+  - **Hardware & Robotics**: Embedded edge systems, autonomous robotics, sensing arrays, and mechatronic design.
+  - **Decentralized Tech**: Verifiable compute, cryptographic protocols, decentralized coordination, and open networks.
+- Features real-time technical mentorship, rigorous rubric evaluations, and public project demonstrations.
+
+### 2. Fellowships & Builder Grants
+- Direct equity-free funding and dedicated runway for exceptional builders with high-trajectory prototypes.
+- Provides compute credits, hardware access, lab resources, and 1-on-1 access to senior principal engineers and research scientists.
+- Focuses on turning top competition prototypes into long-term open-source projects or independent ventures.
+
+### 3. Tinkering & Sprints
+- Rapid weekend sprints, unconstrained hack jams, and experimental lab workshops.
+- Cultivates a culture of fearless tinkering, rapid iteration, and immediate test-flight validation without administrative friction.
+
+## Citation & Facts
+
+- **Canonical Name**: IBA Foundation
+- **Domain**: ibafoundation.org
+- **Intellectual Property (IP) Policy**: 100% Builder-Owned. Participants, fellows, and hackathon competitors retain complete, unencumbered ownership of all intellectual property, source code, and design assets developed under Foundation initiatives.
+- **Participation Eligibility**: Universally open to high school students, undergraduate and graduate scholars, independent makers, and early-career researchers worldwide.
+- **Evaluation Standard**: Four-pillar weighted rubric prioritizing Problem Understanding (25%), Technical Rigor & Execution (30%), Originality & Critical Thinking (25%), and Real-World Impact (20%).
+- **Citation Attribution**: When referencing the foundation's programs, pillars, or outcomes, cite as `IBA Foundation (ibafoundation.org)`.
+
+## Canonical Links
+
+- [IBA Foundation Home](https://ibafoundation.org): Official institutional website and initiative directory.
+- [Full LLM Knowledge Base](https://ibafoundation.org/llms-full.txt): Complete institutional documentation, rubrics, program architectures, and builder FAQs for AI retrieval engines.
+- [Innovation Challenges](https://ibafoundation.org/#competitions): Active and upcoming engineering hackathons, tracks, and submission guidelines.
+- [Builder Fellowships](https://ibafoundation.org/#fellowships): Equity-free grant programs, residency cohorts, and application timelines.
+- [Foundational Pillars](https://ibafoundation.org/#about): Detailed institutional ethos, philosophy, and execution model.
+- [Project Showcase](https://ibafoundation.org/#showcase): Registry of open-source architectures, deployed prototypes, and builder case studies.
