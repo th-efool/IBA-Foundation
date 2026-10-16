@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  /* ===========================
+     Brand — IBA Foundation
+  =========================== */
+
+  --color-primary: #DFB17B;
+  --color-primary-hover: #CFA066;
+  --color-primary-light: #F3DFC1;
+  --color-button-cream: #F6F1E5;
+
+  /* ===========================
+     Surfaces
+  =========================== */
+
+  --color-background: #0D0C0A;
+  --color-surface: #161512;
+  --color-surface-subtle: #22201B;
+  --color-border: rgba(255, 255, 255, 0.18);
+
+  /* ===========================
+     Typography
+  =========================== */
+
+  --color-text: #FFFFFF;
+  --color-text-secondary: rgba(255, 255, 255, 0.84);
+  --color-text-muted: rgba(232, 216, 192, 0.72);
+
+  /* ===========================
+     Status
+  =========================== */
+
+  --color-success: #2E9B63;
+  --color-warning: #DFB17B;
+  --color-error: #D94A4A;
+  --color-info: #3D7EA6;
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-surface-subtle: var(--color-surface-subtle);
+
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-light: var(--color-primary-light);
+  --color-button-cream: var(--color-button-cream);
+
+  --color-border: var(--color-border);
+
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
