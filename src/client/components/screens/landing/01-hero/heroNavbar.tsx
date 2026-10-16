@@ -1,12 +1,15 @@
 import Link from "next/link";
 
 const navigation = [
-    { href: "#about", label: "About" },
-    { href: "#competitions", label: "Competitions" },
-    { href: "#initiatives", label: "Initiatives" },
-    { href: "#community", label: "Community" },
-    { href: "#partners", label: "Partners" },
+    { href: "/fellowship", label: "Fellowship" },
+    { href: "/challenges", label: "Challenges" },
+    { href: "/programs", label: "Programs" },
+    { href: "/showcase", label: "Showcase" },
+    { href: "/playbooks", label: "Playbooks" },
+    { href: "/locations", label: "Locations" },
+    { href: "/values", label: "Values" },
 ];
+
 
 export function HeroNavbar() {
     return (
