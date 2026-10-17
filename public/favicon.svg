@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0D0C0A"/>
+  <g transform="translate(6, 19.7) scale(0.17687)">
+    <!-- 01 Blue Angled Arm -->
+    <path d="M0 0 H38 L108 70 V105 H54 V98 L0 44 Z" fill="#3157BC"/>
+    <!-- 02 Terracotta Center Pillar -->
+    <path d="M121 30 L176 0 V98 L166 105 H121 Z" fill="#CA6141"/>
+    <!-- 03 Common Ground Base and Right Arm -->
+    <path d="M54 105 H166 Q178 94 190 78 L250 18 H294 V51 L239 106 V139 H54 Z" fill="#4E7873"/>
+  </g>
+</svg>

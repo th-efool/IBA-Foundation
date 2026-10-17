@@ -19,6 +19,7 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -69,6 +70,16 @@ export const metadata: Metadata = {
     description:
       "We bring ambitious people together to think critically, experiment boldly, and build solutions to real-world problems.",
     images: ["/images/hero-poster.webp"],
+  },
+
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
 };
 
