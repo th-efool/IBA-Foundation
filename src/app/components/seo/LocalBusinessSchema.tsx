@@ -152,6 +152,7 @@ export function formatHubToSchema(hub: InnovationHubLocation) {
     "@type": "Organization",
     name: "IBA Foundation",
     url: "https://ibafoundation.org",
+    logo: "https://ibafoundation.org/images/icon-512.png",
   };
 
   return schema;

@@ -35,7 +35,7 @@ export function JsonLd({ customData }: { customData?: Partial<OrganizationMetada
           customData?.description ??
           "We bring ambitious people together to think critically, experiment boldly, and build solutions to real-world problems.",
         url: baseUrl,
-        logo: customData?.logo ?? "https://ibafoundation.org/images/hero-poster.webp",
+        logo: customData?.logo ?? "https://ibafoundation.org/images/icon-512.png",
         sameAs: customData?.sameAs ?? [
           "https://twitter.com/ibafoundation",
           "https://linkedin.com/company/ibafoundation",

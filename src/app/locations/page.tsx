@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CommonGroundLogo } from "@/src/app/components/brand/CommonGroundLogo";
 import {
   MapPin,
   Phone,
@@ -172,50 +173,13 @@ export default function LocationsPage() {
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-40 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
-          {/* Official IBA Foundation Brand Mark */}
-          <Link
+          {/* Official IBA Foundation Brand Mark (03 / COMMON GROUND) */}
+          <CommonGroundLogo
             href="/"
-            className="group relative inline-flex flex-col items-start select-none"
-            aria-label="IBA Foundation Home"
-          >
-            <div className="relative flex items-baseline">
-              <svg
-                viewBox="0 0 120 42"
-                fill="none"
-                aria-hidden="true"
-                className="pointer-events-none absolute -top-2.5 left-2 h-[115%] w-[92%] overflow-visible"
-              >
-                <path
-                  d="M 18 22 C 42 -4, 96 -6, 104 8 C 108 15, 92 28, 72 34"
-                  stroke="url(#ibaArcGradNav)"
-                  strokeWidth="2.4"
-                  strokeLinecap="round"
-                />
-                <circle cx="96" cy="4.5" r="2.6" fill="#F5D7A1" />
-                <defs>
-                  <linearGradient
-                    id="ibaArcGradNav"
-                    x1="18"
-                    y1="22"
-                    x2="104"
-                    y2="8"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0%" stopColor="#DFB17B" stopOpacity="0.15" />
-                    <stop offset="55%" stopColor="#DFB17B" stopOpacity="0.95" />
-                    <stop offset="85%" stopColor="#F7E1B5" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#DFB17B" stopOpacity="0.35" />
-                  </linearGradient>
-                </defs>
-              </svg>
-              <span className="font-serif text-2xl font-medium tracking-[0.04em] text-white">
-                IBA
-              </span>
-            </div>
-            <span className="mt-0.5 pl-[0.25em] text-[7.5px] font-medium tracking-[0.28em] uppercase text-white/80">
-              FOUNDATION
-            </span>
-          </Link>
+            size="md"
+            theme="dark"
+            className="transition-transform duration-200 hover:scale-[1.02]"
+          />
 
           {/* Directory Quick Navigation */}
           <nav
@@ -1036,9 +1000,7 @@ export default function LocationsPage() {
       <footer className="border-t border-white/10 bg-background py-12">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row sm:px-8 lg:px-12 text-xs text-text-muted">
           <div className="flex items-center gap-3">
-            <span className="font-serif text-sm font-semibold text-white">
-              IBA Foundation
-            </span>
+            <CommonGroundLogo href="/" size="sm" theme="dark" />
             <span>•</span>
             <span>Potential, put into practice.</span>
           </div>

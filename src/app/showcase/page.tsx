@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { CommonGroundLogo } from "@/src/app/components/brand/CommonGroundLogo";
 import {
   Sparkles,
   ArrowUpRight,
@@ -148,52 +149,13 @@ export default function ShowcasePage() {
         {/* Navigation Bar */}
         <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#0D0C0A]/80 border-b border-white/10">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            {/* IBA Foundation Brand Mark */}
-            <Link
+            {/* Official IBA Foundation Brand Mark (03 / COMMON GROUND) */}
+            <CommonGroundLogo
               href="/"
-              className="group relative inline-flex flex-col items-center select-none"
-              aria-label="IBA Foundation Home"
-            >
-              <div className="relative flex items-baseline">
-                {/* Golden Orbital Swoosh Arc */}
-                <svg
-                  viewBox="0 0 120 42"
-                  fill="none"
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -top-2 left-2 w-[92%] h-[115%] overflow-visible"
-                >
-                  <path
-                    d="M 18 22 C 42 -4, 96 -6, 104 8 C 108 15, 92 28, 72 34"
-                    stroke="url(#ibaShowcaseArcGrad)"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="96" cy="4.5" r="2.6" fill="#F5D7A1" />
-                  <defs>
-                    <linearGradient
-                      id="ibaShowcaseArcGrad"
-                      x1="18"
-                      y1="22"
-                      x2="104"
-                      y2="8"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0%" stopColor="#DFB17B" stopOpacity="0.2" />
-                      <stop offset="55%" stopColor="#DFB17B" stopOpacity="0.95" />
-                      <stop offset="85%" stopColor="#F7E1B5" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#DFB17B" stopOpacity="0.4" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <span className="relative z-10 font-serif text-2xl sm:text-3xl font-medium tracking-[0.04em] text-white">
-                  IBA
-                </span>
-              </div>
-              <span className="text-[7.5px] sm:text-[8.5px] font-medium tracking-[0.28em] uppercase text-white/90 pl-[0.28em]">
-                FOUNDATION
-              </span>
-            </Link>
+              size="md"
+              theme="dark"
+              className="transition-transform duration-200 hover:scale-[1.02]"
+            />
 
             {/* Desktop Navigation Links */}
             <nav className="hidden md:flex items-center gap-8 lg:gap-10" aria-label="Main Navigation">
@@ -392,9 +354,7 @@ export default function ShowcasePage() {
         <footer className="w-full border-t border-white/10 bg-[#0A0908] py-12 px-4 sm:px-6 lg:px-8 mt-16 text-xs text-white/60">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-              <Link href="/" className="font-serif text-lg font-medium text-white tracking-wider">
-                IBA FOUNDATION
-              </Link>
+              <CommonGroundLogo href="/" size="sm" theme="dark" />
               <span className="hidden sm:inline-block text-white/30">&bull;</span>
               <p className="text-white/50">Potential, put into practice.</p>
             </div>

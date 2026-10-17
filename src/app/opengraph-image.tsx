@@ -38,30 +38,50 @@ export default async function Image() {
           }}
         />
 
-        {/* Top Header: Logo Mark */}
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            style={{
-              fontSize: 64,
-              fontFamily: "Georgia, serif",
-              fontWeight: 600,
-              color: "#FFFFFF",
-              letterSpacing: "0.04em",
-              lineHeight: 1,
-            }}
+        {/* Top Header: Logo Mark (03 / COMMON GROUND) */}
+        <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+          <svg
+            viewBox="0 0 294 139"
+            width="118"
+            height="56"
+            fill="none"
           >
-            IBA
-          </div>
-          <div
-            style={{
-              fontSize: 16,
-              fontWeight: 600,
-              letterSpacing: "0.3em",
-              color: "#DFB17B",
-              marginTop: "8px",
-            }}
-          >
-            FOUNDATION
+            <path
+              d="M0 0 H38 L108 70 V105 H54 V98 L0 44 Z"
+              fill="#3157BC"
+            />
+            <path
+              d="M121 30 L176 0 V98 L166 105 H121 Z"
+              fill="#CA6141"
+            />
+            <path
+              d="M54 105 H166 Q178 94 190 78 L250 18 H294 V51 L239 106 V139 H54 Z"
+              fill="#4E7873"
+            />
+          </svg>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                fontSize: 48,
+                fontWeight: 900,
+                color: "#FFFFFF",
+                letterSpacing: "0.04em",
+                lineHeight: 1,
+              }}
+            >
+              IBA
+            </div>
+            <div
+              style={{
+                fontSize: 14,
+                fontWeight: 700,
+                letterSpacing: "0.3em",
+                color: "rgba(255, 255, 255, 0.85)",
+                marginTop: "6px",
+              }}
+            >
+              FOUNDATION
+            </div>
           </div>
         </div>
 

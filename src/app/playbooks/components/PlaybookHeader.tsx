@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CommonGroundLogo } from "@/src/app/components/brand/CommonGroundLogo";
 import { BookOpen, Sparkles, ChevronRight } from "lucide-react";
 
 interface PlaybookHeaderProps {
@@ -11,51 +12,13 @@ export function PlaybookHeader({ breadcrumbs }: PlaybookHeaderProps) {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 py-3.5">
         {/* Brand Mark and Optional Breadcrumbs */}
         <div className="flex items-center gap-4 sm:gap-6">
-          <Link
+          {/* Official IBA Foundation Brand Mark (03 / COMMON GROUND) */}
+          <CommonGroundLogo
             href="/"
-            className="group relative inline-flex flex-col items-center shrink-0 select-none"
-            aria-label="IBA Foundation Home"
-          >
-            <div className="relative flex items-baseline">
-              {/* Golden Orbital Swoosh Arc */}
-              <svg
-                viewBox="0 0 120 42"
-                fill="none"
-                aria-hidden="true"
-                className="pointer-events-none absolute -top-2 left-1.5 w-[92%] h-[115%] overflow-visible"
-              >
-                <path
-                  d="M 18 22 C 42 -4, 96 -6, 104 8 C 108 15, 92 28, 72 34"
-                  stroke="url(#playbookArcGrad)"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                />
-                <circle cx="96" cy="4.5" r="2.4" fill="#F5D7A1" />
-                <defs>
-                  <linearGradient
-                    id="playbookArcGrad"
-                    x1="18"
-                    y1="22"
-                    x2="104"
-                    y2="8"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0%" stopColor="#DFB17B" stopOpacity="0.15" />
-                    <stop offset="55%" stopColor="#DFB17B" stopOpacity="0.95" />
-                    <stop offset="85%" stopColor="#F7E1B5" stopOpacity="1" />
-                    <stop offset="100%" stopColor="#DFB17B" stopOpacity="0.35" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              <span className="relative z-10 font-serif text-2xl font-medium leading-none tracking-[0.04em] text-white">
-                IBA
-              </span>
-            </div>
-            <span className="mt-0.5 text-[7.5px] font-medium tracking-[0.28em] uppercase text-white/90 pl-[0.28em]">
-              FOUNDATION
-            </span>
-          </Link>
+            size="sm"
+            theme="dark"
+            className="transition-transform duration-200 hover:scale-[1.02]"
+          />
 
           <div className="hidden h-5 w-px bg-white/15 sm:block" />
 

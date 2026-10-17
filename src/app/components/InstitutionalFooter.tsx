@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CommonGroundLogo } from "@/src/app/components/brand/CommonGroundLogo";
 
 export function InstitutionalFooter() {
   return (
@@ -7,18 +8,13 @@ export function InstitutionalFooter() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-6">
-            <Link
+            <CommonGroundLogo
               href="/"
-              className="inline-flex flex-col items-start select-none"
-              aria-label="IBA Foundation Home"
-            >
-              <span className="font-serif text-3xl font-medium tracking-[0.04em] text-white">
-                IBA
-              </span>
-              <span className="mt-0.5 text-[8.5px] font-medium tracking-[0.3em] uppercase text-[#DFB17B]">
-                FOUNDATION
-              </span>
-            </Link>
+              layout="horizontal"
+              size="lg"
+              theme="dark"
+              className="transition-transform duration-200 hover:scale-[1.02]"
+            />
 
             <p className="max-w-md text-sm leading-relaxed text-white/75 font-sans">
               IBA Foundation is an institutional platform dedicated to putting potential into practice. We fund and support ambitious technical talent through non-dilutive fellowship grants, rigorous challenges, and permanent research pathways.

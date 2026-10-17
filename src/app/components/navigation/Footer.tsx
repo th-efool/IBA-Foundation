@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight, ShieldCheck, Terminal, Award, Sparkles } from "lucide-react";
+import { CommonGroundLogo } from "@/src/app/components/brand/CommonGroundLogo";
 
 export function Footer() {
   return (
@@ -37,51 +38,13 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-5">
           {/* Col 1 & 2: Institutional Brand */}
           <div className="lg:col-span-2">
-            <Link
+            <CommonGroundLogo
               href="/"
-              className="group relative inline-flex flex-col items-start select-none"
-              aria-label="IBA Foundation Home"
-            >
-              <div className="relative flex items-baseline">
-                <svg
-                  viewBox="0 0 120 42"
-                  fill="none"
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -top-2.5 sm:-top-3 left-2 sm:left-2.5 w-[92%] h-[115%] overflow-visible"
-                >
-                  <path
-                    d="M 18 22 C 42 -4, 96 -6, 104 8 C 108 15, 92 28, 72 34"
-                    stroke="url(#footerIbaArcGrad)"
-                    strokeWidth="2.4"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="96" cy="4.5" r="2.6" fill="#F5D7A1" />
-                  <defs>
-                    <linearGradient
-                      id="footerIbaArcGrad"
-                      x1="18"
-                      y1="22"
-                      x2="104"
-                      y2="8"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset="0%" stopColor="#DFB17B" stopOpacity="0.15" />
-                      <stop offset="55%" stopColor="#DFB17B" stopOpacity="0.95" />
-                      <stop offset="85%" stopColor="#F7E1B5" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#DFB17B" stopOpacity="0.35" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-
-                <span className="relative z-10 font-serif text-3xl font-medium tracking-[0.04em] text-white">
-                  IBA
-                </span>
-              </div>
-
-              <span className="mt-1 text-[8px] font-mono uppercase tracking-[0.28em] text-white/80 pl-[0.28em]">
-                FOUNDATION
-              </span>
-            </Link>
+              layout="horizontal"
+              size="lg"
+              theme="dark"
+              className="transition-transform duration-200 hover:scale-[1.02]"
+            />
 
             <p className="mt-4 max-w-sm text-sm font-sans leading-relaxed text-[#E8D8C0]/80">
               IBA Foundation exists to foster innovation among emerging builders by creating
