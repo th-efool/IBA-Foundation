@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 294 139" fill="none">
+  <title>IBA Foundation — Common Ground Mark</title>
+  <!-- 01 Blue Angled Arm -->
+  <path d="M0 0 H38 L108 70 V105 H54 V98 L0 44 Z" fill="#FFFFFF"/>
+  <!-- 02 Terracotta Center Pillar -->
+  <path d="M121 30 L176 0 V98 L166 105 H121 Z" fill="#FFFFFF"/>
+  <!-- 03 Common Ground Base & Right Arm -->
+  <path d="M54 105 H166 Q178 94 190 78 L250 18 H294 V51 L239 106 V139 H54 Z" fill="#FFFFFF"/>
+</svg>

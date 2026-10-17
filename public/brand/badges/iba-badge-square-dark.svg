@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <title>IBA Foundation — Squircle Icon Badge</title>
+  <rect width="256" height="256" rx="56" fill="#0D0C0A"/>
+  <rect x="1.5" y="1.5" width="253" height="253" rx="54.5" stroke="rgba(255,255,255,0.14)" stroke-width="3"/>
+  <g transform="translate(25, 79) scale(0.70)">
+    <path d="M0 0 H38 L108 70 V105 H54 V98 L0 44 Z" fill="#3157BC"/>
+    <path d="M121 30 L176 0 V98 L166 105 H121 Z" fill="#CA6141"/>
+    <path d="M54 105 H166 Q178 94 190 78 L250 18 H294 V51 L239 106 V139 H54 Z" fill="#4E7873"/>
+  </g>
+</svg>
