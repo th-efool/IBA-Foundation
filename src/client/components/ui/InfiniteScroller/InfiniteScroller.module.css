@@ -1,0 +1,64 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.viewportWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+  scroll-behavior: auto;
+  touch-action: pan-x pan-y;
+  cursor: grab;
+  padding: 12px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+}
+
+.viewport.dragging,
+.dragging {
+  cursor: grabbing !important;
+  scroll-behavior: auto;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.viewport,
+.viewport *,
+.track,
+.track * {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+.viewport img,
+.track img {
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none !important;
+}
+
+.track {
+  display: inline-flex;
+  gap: 24px;
+  width: max-content;
+  min-width: 100%;
+  align-items: stretch;
+  user-select: none;
+  -webkit-user-drag: none;
+}
