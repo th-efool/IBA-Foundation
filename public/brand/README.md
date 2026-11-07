@@ -1,6 +1,6 @@
-# IBA Foundation — Brand Asset Kit (03 / Common Ground)
+# IBA Foundation — Brand Asset Kit
 
-This directory contains the official vector SVG brand assets, lockups, badges, and icons for the **IBA Foundation** identity based on the **03 / Common Ground** design system.
+This directory contains the official vector SVG brand assets, lockups, badges, and icons for the IBA Foundation identity.
 
 ---
 
@@ -8,10 +8,10 @@ This directory contains the official vector SVG brand assets, lockups, badges, a
 
 | Token | Hex | RGB | Usage |
 |---|---|---|---|
-| **Cobalt Ultramarine** | `#3157BC` | `rgb(49, 87, 188)` | Primary mark left angled arm (45° beam) |
-| **Warm Terracotta** | `#CA6141` | `rgb(202, 97, 65)` | Primary mark center vertical pillar |
-| **Spruce Slate (Dark Mode)** | `#4E7873` | `rgb(78, 120, 115)` | Common Ground baseline & right arm on dark canvases |
-| **Deep Forest Spruce (Light Mode)**| `#223635` | `rgb(34, 54, 53)` | Common Ground baseline, text, and strokes on light canvases |
+| **Electric Blue** | `#1645FF` | `rgb(22, 69, 255)` | Primary mark left angled arm |
+| **Coral** | `#FF5035` | `rgb(255, 80, 53)` | Primary mark center pillar |
+| **Ice White** | `#E9EFF8` | `rgb(233, 239, 248)` | Mark base and right arm on dark canvases |
+| **Ink** | `#080A10` | `rgb(8, 10, 16)` | Mark base and right arm on light canvases |
 | **Pure White** | `#FFFFFF` | `rgb(255, 255, 255)` | Primary text & monochrome white assets on dark surfaces |
 | **Ivory Off-White** | `#F7F4ED` | `rgb(247, 244, 237)` | Identity study background and light badges |
 | **Obsidian Black** | `#0D0C0A` | `rgb(13, 12, 10)` | Global website dark background & app squircle tiles |
@@ -24,8 +24,8 @@ This directory contains the official vector SVG brand assets, lockups, badges, a
 ### 1. Isolated Marks (`/public/brand/marks/`)
 Isolated geometric mark without typography. Native aspect ratio: `294 × 139` (~2.115 : 1).
 
-* `iba-mark-dark.svg`: For dark backgrounds (Cobalt, Terracotta, Calibrated Spruce `#4E7873`).
-* `iba-mark-light.svg`: For light backgrounds (Cobalt, Terracotta, Deep Spruce `#223635`).
+* `iba-mark-dark.svg`: For dark backgrounds with the ice-white base and right arm.
+* `iba-mark-light.svg`: For light backgrounds with the ink base and right arm.
 * `iba-mark-white.svg`: 100% white monochrome for dark image overlays & photography.
 * `iba-mark-black.svg`: 100% black monochrome for single-color print, letterheads, and stamps.
 

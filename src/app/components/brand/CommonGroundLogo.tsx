@@ -7,42 +7,42 @@ export interface CommonGroundMarkProps {
 }
 
 /**
- * Pure SVG mark for 03 / COMMON GROUND
+ * Pure SVG mark for IBA Foundation.
  * Composed of:
- * 1. Cobalt Blue angled beam (#3157BC)
- * 2. Terracotta center pillar (#CA6141)
- * 3. Spruce Common Ground base and rising right arm (#4E7873 in dark, #223635 in light)
+ * 1. Electric blue angled beam (#1645FF)
+ * 2. Coral center pillar (#FF5035)
+ * 3. Ice-white base and rising right arm (#E9EFF8 on dark, #080A10 on light)
  */
 export function CommonGroundMark({
-  className = "h-8 w-auto aspect-[294/139] shrink-0",
+  className = "h-8 w-auto aspect-[420/198] shrink-0",
   theme = "dark",
   style,
 }: CommonGroundMarkProps) {
-  const spruceColor = theme === "dark" ? "#4E7873" : "#223635";
+  const baseColor = theme === "dark" ? "#E9EFF8" : "#080A10";
 
   return (
     <svg
-      viewBox="0 0 294 139"
+      viewBox="0 0 420 198"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       style={style}
       aria-hidden="true"
     >
-      {/* 01 Blue Angled Arm */}
+      {/* Blue angled arm */}
       <path
-        d="M0 0 H38 L108 70 V105 H54 V98 L0 44 Z"
-        fill="#3157BC"
+        d="M0 0 H54 L154 100 V150 H77 L0 73 Z"
+        fill="#1645FF"
       />
-      {/* 02 Terracotta Center Pillar */}
+      {/* Coral center pillar */}
       <path
-        d="M121 30 L176 0 V98 L166 105 H121 Z"
-        fill="#CA6141"
+        d="M173 42 L252 0 V150 H173 Z"
+        fill="#FF5035"
       />
-      {/* 03 Common Ground Spruce Base and Right Arm */}
+      {/* Shared base and right arm */}
       <path
-        d="M54 105 H166 Q178 94 190 78 L250 18 H294 V51 L239 106 V139 H54 Z"
-        fill={spruceColor}
+        d="M252 150 L357 25 H420 V72 L342 150 V198 H77 V150 Z"
+        fill={baseColor}
       />
     </svg>
   );
@@ -69,10 +69,10 @@ export function CommonGroundLogo({
 
   // Mark sizing per scale
   const markSizeClasses = {
-    sm: "h-6 w-auto aspect-[294/139]",
-    md: "h-8 w-auto aspect-[294/139]",
-    lg: "h-10 w-auto aspect-[294/139]",
-    xl: "h-14 w-auto aspect-[294/139]",
+    sm: "h-6 w-auto aspect-[420/198]",
+    md: "h-8 w-auto aspect-[420/198]",
+    lg: "h-10 w-auto aspect-[420/198]",
+    xl: "h-14 w-auto aspect-[420/198]",
   }[size];
 
   // Text sizes for horizontal layout
@@ -108,14 +108,14 @@ export function CommonGroundLogo({
           <div className="mt-2.5 flex flex-col items-center">
             <span
               className={`font-sans font-black tracking-[0.04em] uppercase leading-none ${
-                isDark ? "text-white" : "text-[#223635]"
+                isDark ? "text-white" : "text-[#080A10]"
               } ${vTextConfig.iba} ${textClassName}`}
             >
               IBA
             </span>
             <span
               className={`mt-1 font-sans font-semibold tracking-[0.3em] uppercase leading-none pl-[0.3em] ${
-                isDark ? "text-white/80" : "text-[#223635]/85"
+                isDark ? "text-white/80" : "text-[#080A10]/85"
               } ${vTextConfig.foundation}`}
             >
               FOUNDATION
@@ -125,21 +125,21 @@ export function CommonGroundLogo({
       );
     }
 
-    // Default: Horizontal lockup (matching 03 / COMMON GROUND dark & light cards)
+    // Default horizontal lockup
     return (
       <div className={`inline-flex items-center gap-3 sm:gap-3.5 select-none ${className}`}>
         <CommonGroundMark theme={theme} className={markSizeClasses} />
         <div className="flex flex-col justify-center leading-none">
           <span
             className={`font-sans font-black tracking-[0.04em] uppercase leading-none ${
-              isDark ? "text-white" : "text-[#223635]"
+              isDark ? "text-white" : "text-[#080A10]"
             } ${hTextConfig.iba} ${textClassName}`}
           >
             IBA
           </span>
           <span
             className={`mt-1 font-sans font-semibold tracking-[0.28em] uppercase leading-none pl-[0.28em] ${
-              isDark ? "text-white/75" : "text-[#223635]/80"
+              isDark ? "text-white/75" : "text-[#080A10]/80"
             } ${hTextConfig.foundation}`}
           >
             FOUNDATION
@@ -153,7 +153,7 @@ export function CommonGroundLogo({
     return (
       <Link
         href={href}
-        className="group inline-flex shrink-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3157BC] rounded-md"
+        className="group inline-flex shrink-0 transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#1645FF] rounded-md"
         aria-label="IBA Foundation Home"
       >
         {content}

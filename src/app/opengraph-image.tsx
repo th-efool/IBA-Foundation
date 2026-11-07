@@ -38,25 +38,25 @@ export default async function Image() {
           }}
         />
 
-        {/* Top Header: Logo Mark (03 / COMMON GROUND) */}
+        {/* Top header logo mark */}
         <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
           <svg
-            viewBox="0 0 294 139"
+            viewBox="0 0 420 198"
             width="118"
             height="56"
             fill="none"
           >
             <path
-              d="M0 0 H38 L108 70 V105 H54 V98 L0 44 Z"
-              fill="#3157BC"
+              d="M0 0 H54 L154 100 V150 H77 L0 73 Z"
+              fill="#1645FF"
             />
             <path
-              d="M121 30 L176 0 V98 L166 105 H121 Z"
-              fill="#CA6141"
+              d="M173 42 L252 0 V150 H173 Z"
+              fill="#FF5035"
             />
             <path
-              d="M54 105 H166 Q178 94 190 78 L250 18 H294 V51 L239 106 V139 H54 Z"
-              fill="#4E7873"
+              d="M252 150 L357 25 H420 V72 L342 150 V198 H77 V150 Z"
+              fill="#E9EFF8"
             />
           </svg>
           <div style={{ display: "flex", flexDirection: "column" }}>
