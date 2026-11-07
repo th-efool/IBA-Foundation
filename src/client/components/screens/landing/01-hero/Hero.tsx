@@ -10,7 +10,6 @@ const navigation = [
     { href: "/values", label: "About" },
     { href: "/programs", label: "Programs" },
     { href: "/showcase", label: "Showcase" },
-    { href: "/playbooks", label: "Playbooks" },
 ];
 
 export function Hero() {
