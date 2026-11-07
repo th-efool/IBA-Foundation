@@ -53,7 +53,7 @@ export function ProgrammeCard({
   return (
     <article
       onClick={onClick}
-      className={`group relative w-[320px] sm:w-[450px] md:w-[490px] lg:w-[520px] h-[300px] sm:h-[330px] md:h-[350px] rounded-2xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 select-none cursor-pointer transition-all duration-300 shrink-0 ${
+      className={`group relative w-full min-w-0 h-[300px] sm:h-[330px] md:h-[350px] rounded-2xl overflow-hidden flex flex-col justify-between p-6 sm:p-8 select-none transition-all duration-300 shrink-0 ${
         isActive
           ? 'border border-[#DFB17B] ring-1 ring-[#DFB17B]/40 shadow-[0_0_35px_rgba(223,177,123,0.14)]'
           : 'border border-white/10 hover:border-white/25 bg-[#12110F]'

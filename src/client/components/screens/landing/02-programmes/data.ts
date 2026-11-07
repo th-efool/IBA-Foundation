@@ -15,7 +15,7 @@ export const PROGRAMMES_DATA: ProgrammeItem[] = [
     rightMetric: {
       icon: 'calendar',
       label: 'Registration Closes',
-      value: 'Oct 12, 2026',
+      value: 'Dates to be announced',
     },
     href: '/challenges',
   },
@@ -33,18 +33,14 @@ export const PROGRAMMES_DATA: ProgrammeItem[] = [
     rightMetric: {
       icon: 'calendar',
       label: 'Registration Closes',
-      value: 'Oct 18, 2026',
+      value: 'Dates to be announced',
     },
     href: '/challenges',
   },
   {
-    id: 'fall-residency',
+    id: 'winter-residency',
     category: 'RESIDENCY',
-    badge: {
-      text: 'CLOSED',
-      variant: 'closed',
-    },
-    title: 'IBA × Fall Residency',
+    title: 'IBA × Winter Residency',
     subtitle: 'Research × Product',
     image: '/images/section2/card3-residency.jpg',
     leftMetric: {
@@ -54,7 +50,7 @@ export const PROGRAMMES_DATA: ProgrammeItem[] = [
     rightMetric: {
       icon: 'calendar',
       label: 'Application Period',
-      value: 'Aug 01 – Aug 31, 2026',
+      value: 'Dates to be announced',
     },
     href: '/fellowship',
   },
